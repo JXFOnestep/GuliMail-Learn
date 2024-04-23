@@ -96,7 +96,7 @@ public class CouponController {
     String name;
     @Value("${coupon.user.age}")
     Integer age;
-
+    //修改代码
     @RequestMapping("/test")
     public R test() {
         return R.ok().put("name", name).put("age",age);
