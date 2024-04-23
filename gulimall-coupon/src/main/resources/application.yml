@@ -1,0 +1,65 @@
+##server:
+##  port: 9000
+##spring:
+##  application:
+##    name: gulimall-coupon
+##  datasource:
+##    username: root
+##    password: root
+##    url: jdbc:mysql://localhost:3306/gulimall_sms
+##    driver-class-name: com.mysql.cj.jdbc.Driver
+##  cloud:
+##    nacos:
+##      discovery:
+##        server-addr: 127.0.0.1:8848
+##
+### MapperScan
+### sql??????
+##mybatis-plus:
+##  mapper-locations: classpath:/mapper/**/*.xml
+##  global-config:
+##    db-config:
+##      id-type: auto
+#
+#spring:
+#  application:
+#    # 应用名，必填，用于注册nacos
+#    name: gulimall-coupon
+#  cloud:
+#    nacos:
+#      config:
+#        # 启用nacos配置管理
+#        enabled: true
+#        # 配置中心地址
+#        server-addr: 127.0.0.1:8848
+#        # 所属命名空间id，用于区分开发、测试、生产
+#        namespace: d9b97c7b-480d-46b0-b07c-d6d2bc3885e2
+#        # 配置文件类型
+#        file-extension: yml
+#        ext-config[0]:
+#          data-id: dataSource.yml
+#          group: dev
+#          refresh: true
+#        ext-config[1]:
+#          data-id: mybatis.yml
+#          group: dev
+#          refresh: true
+#        ext-config[2]:
+#          data-id: others.yml
+#          group: dev
+#          refresh: true
+#      discovery:
+#        # 注册中心地址
+#        server-addr: 127.0.0.1:8848
+#        # 所属命名空间id，用于区分开发、测试、生产
+#        namespace: d9b97c7b-480d-46b0-b07c-d6d2bc3885e2
+#        # 设置为false可以只发现其他服务但不注册自身，用于本地代码调试
+#        register-enabled: false
+#  config:
+#    # 因为springboot 2.4版本以后默认关闭加载bootstrap.yml，所以只能通过此方式连接到nacos config
+#    import: nacos:${spring.application.name}.${spring.cloud.nacos.config.file-extension}
+#spring:
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: 127.0.0.1:8848
